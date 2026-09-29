@@ -26,7 +26,10 @@
         <img class="avatar" src="headshot.jpg" alt="Photo of Jun Seo Lee" width="120" height="120">
         <div>
           <h1 class="name">Jun Seo Lee <span class="name-ko" lang="ko">(이준서)</span></h1>
-          <p class="tagline">Commerce &amp; Data Science @ UVA McIntire · Seoul → Jakarta → Charlottesville</p>
+          <p class="tagline">Commerce &amp; Data Science @ UVA McIntire</p>
+          <p class="places" aria-label="Jakarta, then Seoul, then Charlottesville">
+            <span>Jakarta</span><span class="sep" aria-hidden="true"></span><span>Seoul</span><span class="sep" aria-hidden="true"></span><span>Charlottesville</span>
+          </p>
         </div>
       </div>
 
@@ -48,6 +51,14 @@
         <a href="#awards">[awards]</a>
         <a href="#contact">[contact]</a>
       </nav>
+
+      <!-- Divider under the tabs: a looping draw shot (animated in script.js's "Pool shot" section) -->
+      <div class="cue-line" aria-hidden="true">
+        <span class="cue-stick"></span>
+        <span class="cue-ball"></span>
+        <span class="eight-ball"></span>
+        <span class="pocket"></span>
+      </div>
     </header>
 
     <!-- ============ ABOUT ============ -->
@@ -79,7 +90,7 @@
           <span class="org">University of Virginia, McIntire School of Commerce</span>
           <span class="date">Aug 2022 – May 2027</span>
         </div>
-        <div class="role">B.S. in Commerce, Minor in Data Science · IT Concentration, Analytics &amp; AI Track · Charlottesville, VA</div>
+        <div class="role">B.S. in Commerce, Minor in Data Science · GPA 3.53 · IT Concentration, Analytics &amp; AI Track · Charlottesville, VA</div>
         <p class="muted">Military service took place during a mandatory leave of absence.</p>
       </div>
       <div class="entry">
@@ -100,7 +111,7 @@
       <h3>Skills</h3>
       <ul class="plain">
         <li><strong>Languages:</strong> English (native), Korean (native), Indonesian (conversational)</li>
-        <li><strong>Technical:</strong> Python, R Studio, Azure SQL, Stata, Tableau, Power BI, Microsoft Office Suite, Miro</li>
+        <li><strong>Technical:</strong> SQL, Python, R, HTML, Tableau, Power BI, Stata, Miro, Excel, Word, PowerPoint</li>
         <li><strong>Other:</strong> A/B testing, competitive analysis, dashboards, market research, text analysis</li>
       </ul>
     </section>
@@ -126,7 +137,7 @@
         <ul>
           <li>Built an automated cold email outreach system and a multilingual support feature, turning user needs into shipped product.</li>
           <li>Analyzed 5 competitors to find usability gaps, which informed the team's decision on conversational model development.</li>
-          <li>Ran an A/B test of the cold email system across 300+ users and found a <strong>13%</strong> lift in replies. The team rolled it out after the internship.</li>
+          <li>Found a <strong>13%</strong> increase in reply rate through an A/B test of the outreach system across 300+ users, leading the team to adopt a new strategy.</li>
         </ul>
       </div>
 
@@ -137,8 +148,8 @@
         </div>
         <div class="role">Research Intern · Remote (New York, NY)</div>
         <ul>
-          <li>Led a team of 3 interns building systems to collect and analyze ESG, CSR, industry-standard, text-analysis, and greenwashing data, shaping the foundation's annual sustainability benchmarking across 3 industries.</li>
-          <li>Queried internal databases with SQL to pull ESG and CSR KPIs, cutting manual reporting time by 5 days.</li>
+          <li>Led three interns in building an ESG and CSR data-analysis workflow used for annual benchmarking across three industries.</li>
+          <li>Queried ESG and CSR KPIs in SQL, cutting manual reporting time by 5 days.</li>
           <li>Designed Power BI and Tableau dashboards that track ESG trends and show sustainability benchmarks for internal reporting.</li>
         </ul>
       </div>
@@ -233,8 +244,8 @@
         </div>
         <div class="role">Student Consultant · Charlottesville, VA</div>
         <ul>
-          <li>Developed a new marketing strategy for an education collaborative in Texas, using R Studio and Excel to find gaps in its current approach.</li>
-          <li>Brought standard operating procedure documentation up to date for an advocacy organization in Virginia.</li>
+          <li>Developed a new marketing strategy for an education collaborative in Texas, using R and Excel to find gaps in its current approach.</li>
+          <li>Designed a new management system for SOP documentation for an advocacy organization in Virginia, streamlining workflows and making its training and emergency response guidelines clearer.</li>
         </ul>
       </div>
 
@@ -245,8 +256,8 @@
         </div>
         <div class="role">Treasurer &amp; Competitive Team Member · Charlottesville, VA</div>
         <ul>
-          <li>Documented the club's financial standing and funding.</li>
-          <li>Manage <strong>$3,000+</strong> of pool equipment so it stays available to members all year.</li>
+          <li>Create financial statements, funding requests, and inventory records using Microsoft Office Suite.</li>
+          <li>Maintain and order pool equipment worth <strong>$3,000</strong>, keeping it available to members throughout the school year.</li>
         </ul>
       </div>
 
@@ -268,36 +279,61 @@
     <!-- ============ AWARDS ============ -->
     <section id="awards" class="panel">
       <h2>Awards &amp; Recognition</h2>
-      <ul class="awards">
-        <li>
-          <span class="award">Commendation for Outstanding Military Discipline</span>
-          <span class="muted">Republic of Korea Army</span>
-        </li>
-        <li>
-          <span class="award">U.S. Army Certificate of Achievement</span>
-          <span class="muted">U.S. Army</span>
-        </li>
-        <li>
-          <span class="award">Company Distinguished Honor Graduate</span>
-          <span class="muted">Korea Army Training Center</span>
-        </li>
-        <li>
-          <span class="award">Commandant's List</span>
-          <span class="muted">KATUSA Training Center</span>
-        </li>
-        <li>
-          <span class="award">Early Promotion to Corporal</span>
-          <span class="muted">Top 10% performance evaluation across battalion, ROK Army</span>
-        </li>
-        <li>
-          <span class="award">Norwegian Foot March — Bronze Award</span>
-          <span class="muted">30 km with an 11 kg rucksack in 4.5 hours</span>
-        </li>
-        <li>
-          <span class="award">Rising Leader Among Men</span>
-          <span class="muted">Lambda Phi Epsilon, 2022–2023</span>
-        </li>
-      </ul>
+      <div class="entry award">
+        <div class="entry-head">
+          <span class="org">Commendation for Outstanding Military Discipline</span>
+          <span class="source">Republic of Korea Army</span>
+        </div>
+        <p class="role">Recognized for exemplary conduct and discipline during my military service.</p>
+      </div>
+
+      <div class="entry award">
+        <div class="entry-head">
+          <span class="org">Certificate of Achievement</span>
+          <span class="source">United States Army</span>
+        </div>
+        <p class="role">Recognized for meritorious performance while serving with U.S. Army units as a KATUSA.</p>
+      </div>
+
+      <div class="entry award">
+        <div class="entry-head">
+          <span class="org">Company Distinguished Honor Graduate</span>
+          <span class="source">Korea Army Training Center, Republic of Korea Army</span>
+        </div>
+        <p class="role">Graduated at the top of my company in basic training.</p>
+      </div>
+
+      <div class="entry award">
+        <div class="entry-head">
+          <span class="org">Commandant's List</span>
+          <span class="source">KATUSA Training Center, Republic of Korea Army</span>
+        </div>
+        <p class="role">Named to the Commandant's List for outstanding performance during KATUSA training.</p>
+      </div>
+
+      <div class="entry award">
+        <div class="entry-head">
+          <span class="org">Early Promotion to Corporal</span>
+          <span class="source">Republic of Korea Army</span>
+        </div>
+        <p class="role">Promoted early from Private First Class after ranking in the top 10% of performance evaluations across the battalion.</p>
+      </div>
+
+      <div class="entry award">
+        <div class="entry-head">
+          <span class="org">Norwegian Foot March — Bronze Award</span>
+          <span class="source">Norwegian Armed Forces</span>
+        </div>
+        <p class="role">Completed a 30 km march carrying an 11 kg rucksack in 4.5 hours.</p>
+      </div>
+
+      <div class="entry award">
+        <div class="entry-head">
+          <span class="org">Rising Leader Among Men</span>
+          <span class="source">Lambda Phi Epsilon</span>
+        </div>
+        <p class="role">Recognized by the chapter as a rising leader in the 2022–2023 academic year.</p>
+      </div>
     </section>
 
     <!-- ============ CONTACT ============ -->
@@ -308,7 +344,6 @@
         <li><span class="label">email</span><a href="mailto:junseo0225@gmail.com">junseo0225@gmail.com</a></li>
         <li><span class="label">linkedin</span><a href="https://www.linkedin.com/in/lee-jun-seo/" target="_blank" rel="noopener">linkedin.com/in/lee-jun-seo</a></li>
         <li><span class="label">github</span><a href="https://github.com/junseo25" target="_blank" rel="noopener">github.com/junseo25</a></li>
-        <li><span class="label">resume</span><a href="resume.pdf" target="_blank" rel="noopener">resume.pdf</a></li>
       </ul>
     </section>
 
