@@ -167,6 +167,20 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 
 .socials { margin: 0 0 16px; }
 .socials span { color: var(--muted); margin: 0 6px; }
+/* dotted underline + arrow: these links leave the page */
+.socials a {
+  text-decoration: underline dotted;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+.socials a:hover { text-decoration-style: solid; }
+.socials a[target="_blank"]::after {
+  content: "\2197"; /* ↗ */
+  display: inline-block;
+  margin-left: 2px;
+  font-size: 0.8em;
+  text-decoration: none;
+}
 
 .tabs {
   display: flex;

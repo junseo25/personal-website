@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="14" fill="#0a0a0a"/>
+  <rect x="4.25" y="4.25" width="55.5" height="55.5" rx="10.5" fill="none" stroke="#ffffff" stroke-width="1.75"/>
+  <text x="32" y="40" text-anchor="middle" textLength="40" lengthAdjust="spacingAndGlyphs"
+        font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="24" font-weight="700"
+        font-style="italic" letter-spacing="-1" fill="#ffffff">JSL</text>
+</svg>
