@@ -11,11 +11,35 @@ function show() {
   tabs.forEach((t) => t.classList.toggle("active", t.getAttribute("href") === "#" + target.id));
 }
 
+const header = document.querySelector("header.top");
+const bar = document.querySelector(".bar");
+
 window.addEventListener("hashchange", () => {
   show();
-  window.scrollTo({ top: 0 });
+  // if the sticky bar is pinned, start the new section right under it instead of jumping to the top
+  const barTop = header.offsetTop + header.offsetHeight;
+  window.scrollTo({ top: Math.min(window.scrollY, barTop) });
 });
 show();
+
+// A link like /#work makes the browser jump to that section, hiding its heading under the
+// sticky bar. Only one section shows at a time, so just start at the top.
+window.addEventListener("load", () => {
+  if (location.hash) window.scrollTo(0, 0);
+});
+
+// Sticky bar: once the github / linkedin / email / resume links have scrolled away, the tabs
+// pin to the top and the name joins them. Keyed to the pin itself so both happen together.
+function updateBar() {
+  bar.classList.toggle("scrolled", bar.getBoundingClientRect().top <= 0);
+}
+window.addEventListener("scroll", updateBar, { passive: true });
+window.addEventListener("resize", updateBar);
+updateBar();
+
+document.querySelector(".bar-name").addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
 
 // Dark mode switch: light (white) by default, remembers the visitor's choice
 const root = document.documentElement;
