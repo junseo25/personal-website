@@ -10,17 +10,19 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Noto+Serif+KR:wght@400;500&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <!-- set the theme before first paint so dark mode doesn't flash -->
+  <script>
+    try { if (localStorage.getItem("theme") === "dark") document.documentElement.dataset.theme = "dark"; } catch (e) {}
+  </script>
 </head>
 <body>
   <main class="wrap">
 
     <!-- ============ HEADER ============ -->
-    <!-- Dark mode switch (fixed, top right) -->
-    <label class="switch" title="Dark mode">
-      <span class="switch-label">dark</span>
-      <input type="checkbox" id="themeToggle" role="switch" aria-label="Dark mode">
-      <span class="track"><span class="thumb"></span></span>
-    </label>
+    <!-- Dark mode button (fixed, top right) -->
+    <button type="button" class="theme" id="themeToggle" aria-label="Toggle dark mode">
+      <span class="theme-dot" aria-hidden="true"></span><span class="theme-text">dark</span>
+    </button>
 
     <header class="top">
       <div class="intro">
@@ -416,6 +418,7 @@
     <!-- ============ CONTACT ============ -->
     <section id="contact" class="panel">
       <h2>Contact</h2>
+      <p>The fastest way to reach me is email. I'm happy to talk about product, analytics, consulting, or pool.</p>
       <ul class="plain contact-list">
         <li><span class="label">email</span><a href="mailto:junseo0225@gmail.com">junseo0225@gmail.com</a></li>
         <li><span class="label">linkedin</span><a href="https://www.linkedin.com/in/lee-jun-seo/" target="_blank" rel="noopener">linkedin.com/in/lee-jun-seo</a></li>

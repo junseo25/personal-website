@@ -41,20 +41,21 @@ document.querySelector(".bar-name").addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
-// Dark mode switch: light (white) by default, remembers the visitor's choice
+// Dark mode button: light (white) by default, remembers the visitor's choice
+// (the saved theme is applied in <head> before first paint)
 const root = document.documentElement;
 const toggle = document.getElementById("themeToggle");
+const themeText = toggle.querySelector(".theme-text");
 
 function setTheme(theme) {
   root.dataset.theme = theme;
-  toggle.checked = theme === "dark";
+  themeText.textContent = theme === "dark" ? "light" : "dark";
+  toggle.setAttribute("aria-pressed", theme === "dark");
 }
+setTheme(root.dataset.theme === "dark" ? "dark" : "light");
 
-try { setTheme(localStorage.getItem("theme") === "dark" ? "dark" : "light"); }
-catch (e) { setTheme("light"); }
-
-toggle.addEventListener("change", () => {
-  setTheme(toggle.checked ? "dark" : "light");
+toggle.addEventListener("click", () => {
+  setTheme(root.dataset.theme === "dark" ? "light" : "dark");
   try { localStorage.setItem("theme", root.dataset.theme); } catch (e) {}
 });
 
