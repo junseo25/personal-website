@@ -33,6 +33,9 @@ The site has no framework, package dependencies, or build step.
 |   |-- favicon.svg
 |   |-- headshot.jpg
 |   `-- resume.pdf
+|-- wip/                       # Work-in-progress redesign (served at /wip/)
+|   |-- index.html
+|   `-- style.css
 |-- CNAME                      # Custom domain configuration
 |-- index.html                 # Site content and page structure
 |-- script.js                  # Navigation, theme, and animation behavior
@@ -57,6 +60,12 @@ Because the site is built with plain HTML, CSS, and JavaScript, no installation 
 - Adjust the design tokens and responsive styles in `style.css`.
 - Update interactive behavior in `script.js`.
 - Store resumes, documents, icons, and images in `public/`, then reference them with paths beginning with `public/`.
+
+## Work-in-Progress Designs
+
+The `wip/` folder is a sandbox for trying new designs without touching the live page. It has its own `index.html` and `style.css`, but it loads the same `script.js` and assets from `public/`, so keep the elements that `script.js` looks for (`header.top`, `.bar`, `.bar-name`, `.tabs a`, `.panel`, `#themeToggle`, `.cue-line`, `#year`). Open `wip/index.html` through a local server (for example `python3 -m http.server`) and visit `/wip/`.
+
+Content in `wip/index.html` is a copy of the live content, so update both files when your experience changes. When a design is ready, move its markup and styles into the root `index.html` and `style.css`. The page is marked `noindex`, but it is public at `/wip/` once it's on the Pages branch.
 
 ## Deployment
 

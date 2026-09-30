@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jun Seo Lee (WIP)</title>
+  <meta name="description" content="Work-in-progress redesign of Jun Seo Lee's personal website.">
+  <!-- WIP: keep this sandbox out of search results -->
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="../public/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Noto+Serif+KR:wght@400;500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <!-- set the theme before first paint so dark mode doesn't flash -->
+  <script>
+    try { if (localStorage.getItem("theme") === "dark") document.documentElement.dataset.theme = "dark"; } catch (e) {}
+  </script>
+</head>
+<body>
+  <!--
+    WORK IN PROGRESS design, served at /wip/.
+    It shares ../script.js with the live site, so it keeps the hooks that script needs:
+    header.top, .bar + .bar-name, .tabs a, .panel, #themeToggle + .theme-text, .cue-line, #year.
+  -->
+  <p class="wip-banner">
+    <span class="wip-dot" aria-hidden="true"></span>work in progress · <a href="../">see the live site</a>
+  </p>
+
+  <main class="wrap">
+
+    <button type="button" class="theme" id="themeToggle" aria-label="Toggle dark mode">
+      <span class="theme-dot" aria-hidden="true"></span><span class="theme-text">dark</span>
+    </button>
+
+    <!-- ============ HEADER ============ -->
+    <header class="top">
+      <img class="avatar" src="../public/headshot.jpg" alt="Photo of Jun Seo Lee" width="88" height="88">
+      <h1 class="name">Jun Seo Lee <span class="name-ko" lang="ko">이준서</span></h1>
+      <p class="lede">
+        I study <mark>Commerce &amp; Data Science</mark> at UVA's McIntire School of Commerce,
+        and I like turning messy information into <em>clear, data-driven decisions</em>.
+      </p>
+      <p class="places" aria-label="Jakarta, then Seoul, then Charlottesville">
+        <span>Jakarta</span><span class="sep" aria-hidden="true"></span><span>Seoul</span><span class="sep" aria-hidden="true"></span><span>Charlottesville</span>
+      </p>
+      <p class="socials">
+        <a href="https://github.com/junseo25" target="_blank" rel="noopener">github</a>
+        <a href="https://www.linkedin.com/in/lee-jun-seo/" target="_blank" rel="noopener">linkedin</a>
+        <a href="mailto:junseo0225@gmail.com">email</a>
+        <a class="primary" href="../public/resume.pdf" target="_blank" rel="noopener">resume</a>
+      </p>
+    </header>
+
+    <!-- Sticky bar: pins once the header scrolls away; the name joins the tabs (script.js) -->
+    <div class="bar">
+      <button type="button" class="bar-name" title="Back to top">Jun Seo Lee</button>
+      <nav class="tabs" aria-label="Sections">
+        <a href="#about">about</a>
+        <a href="#work">work</a>
+        <a href="#involvement">involvement</a>
+        <a href="#awards">awards</a>
+        <a href="#contributions">media</a>
+        <a href="#contact">contact</a>
+      </nav>
+    </div>
+
+    <!-- The pool shot from script.js, now played on a tiny felt table -->
+    <div class="cue-line" aria-hidden="true">
+      <span class="cue-stick"></span>
+      <span class="cue-ball"></span>
+      <span class="eight-ball"></span>
+      <span class="pocket"></span>
+    </div>
+
+    <!-- ============ ABOUT (bento grid) ============ -->
+    <section id="about" class="panel">
+      <h2 class="sr-only">About</h2>
+      <div class="bento">
+
+        <article class="card span-2">
+          <h3>Hello</h3>
+          <p>
+            Hi, I'm Jun Seo. I'm studying Commerce with a minor in Data Science at the University of
+            Virginia's McIntire School of Commerce (Class of 2027), concentrating in IT on the
+            Analytics and AI track. I transferred to UVA from Yonsei University in 2022.
+          </p>
+          <p>
+            This summer I was a product manager intern at Quotain in New York, where I shipped an
+            automated cold email outreach system and ran the A/B test the team adopted. Before that I
+            led a team of research interns at the Global ESG Foundation and did market analysis for a
+            state-owned insurer in Jakarta at House of Analytics. In between, I served 18 months as a
+            KATUSA infantryman with the U.S. Army in Korea.
+          </p>
+          <p>I'm interested in product, analytics, and consulting.</p>
+        </article>
+
+        <article class="card now">
+          <h3><span class="pulse" aria-hidden="true"></span>Now</h3>
+          <ul class="plain now-list">
+            <li><strong>Research Assistant</strong><span>Korea Defense Veterans Association</span></li>
+            <li><strong>Student Consultant</strong><span>180 Degrees Consulting at UVA</span></li>
+            <li><strong>Treasurer</strong><span>Pool and Billiards Club at UVA</span></li>
+          </ul>
+        </article>
+
+        <article class="card route">
+          <h3>Route</h3>
+          <ol class="plain stops">
+            <li><span class="stop-year">2016</span>Jakarta<span class="stop-note">Jakarta Intercultural School</span></li>
+            <li><span class="stop-year">2021</span>Seoul<span class="stop-note">Yonsei University</span></li>
+            <li><span class="stop-year">2022</span>Charlottesville<span class="stop-note">UVA McIntire</span></li>
+            <li><span class="stop-year">2023</span>Pyeongtaek<span class="stop-note">KATUSA, U.S. Army</span></li>
+            <li><span class="stop-year">2025</span>Charlottesville<span class="stop-note">Back to finish at UVA</span></li>
+          </ol>
+        </article>
+
+        <article class="card span-2 offclock">
+          <h3>Off the clock</h3>
+          <ul class="chips">
+            <li>5Ks</li><li>soccer</li><li>hiking</li><li>camping</li><li>shooting pool</li><li>Tetris</li>
+          </ul>
+        </article>
+
+        <article class="card span-2">
+          <h3>Education</h3>
+          <div class="edu">
+            <div class="edu-row">
+              <span class="date">2022 – 2027</span>
+              <div>
+                <span class="org">University of Virginia, McIntire School of Commerce</span>
+                <span class="role">B.S. in Commerce, Minor in Data Science · GPA 3.53 · IT Concentration, Analytics &amp; AI Track</span>
+                <span class="note">Military service took place during a mandatory leave of absence.</span>
+              </div>
+            </div>
+            <div class="edu-row">
+              <span class="date">2021 – 2022</span>
+              <div>
+                <span class="org">Yonsei University, Underwood International College</span>
+                <span class="role">Creative Technology Management · Transferred to UVA</span>
+              </div>
+            </div>
+            <div class="edu-row">
+              <span class="date">2016 – 2020</span>
+              <div>
+                <span class="org">Jakarta Intercultural School</span>
+                <span class="role">International Baccalaureate Diploma</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card span-2 skills">
+          <h3>Toolbox</h3>
+          <dl>
+            <dt>Languages</dt><dd><ul class="chips"><li>English</li><li>Korean</li><li>Indonesian (conversational)</li></ul></dd>
+            <dt>Technical</dt><dd><ul class="chips"><li>SQL</li><li>Python</li><li>R</li><li>HTML</li><li>Tableau</li><li>Power BI</li><li>Stata</li><li>IBM SPSS</li><li>Miro</li><li>Excel</li><li>Word</li><li>PowerPoint</li></ul></dd>
+            <dt>Other</dt><dd><ul class="chips"><li>A/B testing</li><li>competitive analysis</li><li>dashboards</li><li>market research</li><li>text analysis</li></ul></dd>
+          </dl>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ============ WORK (timeline) ============ -->
+    <section id="work" class="panel">
+      <h2>Work</h2>
+      <ol class="timeline">
+        <li class="item">
+          <div class="when"><span class="date">Jan 2026 – Present</span><span class="where">Washington, DC</span></div>
+          <div class="what">
+            <p class="org">Korea Defense Veterans Association</p>
+            <p class="role">Research Assistant</p>
+          </div>
+        </li>
+
+        <li class="item">
+          <div class="when"><span class="date">May – Aug 2026</span><span class="where">New York, NY</span></div>
+          <div class="what">
+            <p class="org">Quotain</p>
+            <p class="role">Product Manager Intern</p>
+            <ul>
+              <li>Built an automated cold email outreach system and a multilingual support feature, turning user needs into shipped products.</li>
+              <li>Analyzed 5 competitors to find usability gaps, which informed the team's decision on conversational model development.</li>
+              <li>Found a 13% increase in reply rate through an A/B test of the outreach system across 300+ users, leading the team to adopt a new strategy.</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="item">
+          <div class="when"><span class="date">Mar – May 2025</span><span class="where">Remote</span></div>
+          <div class="what">
+            <p class="org">Global ESG Foundation</p>
+            <p class="role">Research Intern</p>
+            <ul>
+              <li>Led three interns in building an ESG and CSR data-analysis workflow used for annual benchmarking across three industries.</li>
+              <li>Queried ESG and CSR KPIs in SQL, cutting manual reporting time by 5 days.</li>
+              <li>Designed Power BI and Tableau dashboards that tracked ESG trends and showed sustainability benchmarks for internal reporting.</li>
+            </ul>
+            <a class="doc-link" href="../public/docs/global-esg-foundation-recommendation.pdf" target="_blank" rel="noopener">Letter of Recommendation</a>
+          </div>
+        </li>
+
+        <li class="item">
+          <div class="when"><span class="date">Aug 2023 – Feb 2025</span><span class="where">Pyeongtaek, KR</span></div>
+          <div class="what">
+            <p class="org">Republic of Korea Army — KATUSA</p>
+            <p class="role">Sergeant, Infantryman · Korean Augmentation to the U.S. Army</p>
+            <ul>
+              <li>Served embedded in U.S. Army units deployed to the Korean Peninsula, alongside 1-41IN (4th Infantry Division), Tiger Squadron (3d Cavalry Regiment), and 2-3IN (7th Infantry Division).</li>
+              <li>Promoted early from Private First Class to Corporal after ranking in the top 10% of performance evaluations across the battalion.</li>
+              <li>Led and trained a four-person team, teaching best practices and standard operating procedures across 5+ missions and training exercises.</li>
+              <li>Interpreted for joint ROK–U.S. Army operations and participated in 15+ major exercises, including joint ROK–U.S. training, live-fire and situational training exercises, and THAAD security operations.</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="item">
+          <div class="when"><span class="date">Apr – Aug 2022</span><span class="where">Seoul, KR</span></div>
+          <div class="what">
+            <p class="org">WICKEDLOVER</p>
+            <p class="role">Marketing Intern</p>
+            <ul>
+              <li>Shifted the marketing strategy toward short-form content, increasing social media viewership by 28%.</li>
+              <li>Produced 4 scripts and storyboard concepts for an advertising campaign on the company's social media pages.</li>
+              <li>Analyzed social media trends and algorithms to identify the KPIs and strategies that would increase traffic and purchase conversions.</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="item">
+          <div class="when"><span class="date">Jul – Dec 2021</span><span class="where">Seoul, KR</span></div>
+          <div class="what">
+            <p class="org">Read101</p>
+            <p class="role">English Tutor</p>
+            <ul>
+              <li>Led reading and writing classes for 30+ elementary students, focusing on interpretation, grammar, and presentation.</li>
+              <li>Coached students in public speaking to improve their clarity and confidence.</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="item">
+          <div class="when"><span class="date">Feb – Oct 2021</span><span class="where">Remote</span></div>
+          <div class="what">
+            <p class="org">tuteeonline.com</p>
+            <p class="role">Tutor</p>
+            <ul>
+              <li>Taught weekly Zoom classes for middle and high school students on English, public speaking, and global politics.</li>
+              <li>Developed tailored lesson plans to strengthen students' analytical writing and presentation skills.</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="item">
+          <div class="when"><span class="date">Aug – Dec 2020</span><span class="where">Jakarta, ID</span></div>
+          <div class="what">
+            <p class="org">House of Analytics</p>
+            <p class="role">Junior Consultant Intern</p>
+            <ul>
+              <li>Designed dashboards of relationship manager data that made a local Indonesian bank's evaluation system more efficient.</li>
+              <li>Built the <em>Insurance Customer Centricity Market Sensing</em> analysis with the project manager, covering the insurance industry in Indonesia and Southeast Asia.</li>
+              <li>Presented the analysis to a state-owned insurer, informing its 2021 digital transformation across internal tools and customer-facing operations.</li>
+              <li>Developed a marketing strategy that attracted new customers to the company's online seminars and supported consumer-centric consulting on online platforms.</li>
+            </ul>
+            <a class="doc-link" href="../public/docs/house-of-analytics-recommendation.pdf" target="_blank" rel="noopener">Letter of Recommendation</a>
+          </div>
+        </li>
+
+        <li class="item">
+          <div class="when"><span class="date">Jun – Aug 2020</span><span class="where">Magelang, ID</span></div>
+          <div class="what">
+            <p class="org">PT. Anugerah Abadi Magelang</p>
+            <p class="role">Intern</p>
+            <ul>
+              <li>Supported the supply chain transition for the firm's new PPE production division during the COVID-19 outbreak in Indonesia.</li>
+              <li>Conducted cultural and socioeconomic research to inform product distribution and government-backed aid requests.</li>
+              <li>Helped coordinate the distribution of PPE to charities and government organizations.</li>
+            </ul>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ============ INVOLVEMENT (timeline) ============ -->
+    <section id="involvement" class="panel">
+      <h2>Involvement</h2>
+      <ol class="timeline">
+        <li class="item">
+          <div class="when"><span class="date">Aug 2025 – Present</span><span class="where">Charlottesville, VA</span></div>
+          <div class="what">
+            <p class="org">180 Degrees Consulting at UVA</p>
+            <p class="role">Student Consultant</p>
+            <ul>
+              <li>Developed a new marketing strategy for an education collaborative in Texas, using R and Excel to find gaps in its current approach.</li>
+              <li>Designed a new SOP documentation management system for an advocacy organization in Virginia, which streamlined workflows and clarified its training and emergency response guidelines.</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="item">
+          <div class="when"><span class="date">Apr 2025 – Present</span><span class="where">Charlottesville, VA</span></div>
+          <div class="what">
+            <p class="org">Pool and Billiards Club at UVA</p>
+            <p class="role">Treasurer &amp; Competitive Team Member</p>
+            <ul>
+              <li>Created financial statements, funding requests, and inventory records using Microsoft Office.</li>
+              <li>Maintained and ordered $3,000 worth of pool equipment, keeping it available to members throughout the school year.</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="item">
+          <div class="when"><span class="date">Nov 2022 – Present</span><span class="where">Charlottesville, VA</span></div>
+          <div class="what">
+            <p class="org">Lambda Phi Epsilon</p>
+            <p class="role">Social Media Chair &amp; Philanthropy Chair</p>
+            <ul>
+              <li>Directed a new external relations strategy that increased unique interactions across all social media pages by 36%.</li>
+              <li>Co-led a philanthropy campaign that raised $1,900+ for the National Marrow Donor Program.</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="item">
+          <div class="when"><span class="date">Oct 2022</span><span class="where">Charlottesville, VA</span></div>
+          <div class="what">
+            <p class="org">Japanese Student Association at UVA</p>
+            <p class="role">Philanthropy Event Coordinator</p>
+            <ul>
+              <li>Raised $400+ for the Blue Ridge Area Food Bank by selling imported Japanese sweets and snacks at a one-day event.</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="item">
+          <div class="when"><span class="date">Jun 2019</span><span class="where">Jakarta, ID</span></div>
+          <div class="what">
+            <p class="org">Jakarta Intercultural School</p>
+            <p class="role">Summer Camp Counselor</p>
+            <ul>
+              <li>Helped teachers and program coordinators run the JIS Academy summer program for children ages 4–11 and led activities such as sports and games.</li>
+            </ul>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ============ AWARDS (card grid) ============ -->
+    <section id="awards" class="panel">
+      <h2>Awards &amp; Certifications</h2>
+      <div class="award-grid">
+        <article class="card award">
+          <span class="year">2024</span>
+          <p class="org">Commendation for Outstanding Military Discipline</p>
+          <p class="role">3rd Area ROK Support Group, 8th U.S. Army ROKA Support Group, Republic of Korea Army</p>
+          <p class="desc">Recognized for exemplary conduct and discipline during my military service.</p>
+        </article>
+
+        <article class="card award">
+          <span class="year">2024</span>
+          <p class="org">Certificate of Achievement</p>
+          <p class="role">1-41IN, 2SBCT, 4th Infantry Division, United States Army</p>
+          <p class="desc">Recognized for meritorious performance while serving with U.S. Army units as a KATUSA.</p>
+          <a class="doc-link" href="../public/docs/certificate-of-achievement-1-41in.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+
+        <article class="card award">
+          <span class="year">2024</span>
+          <p class="org">Early Promotion to Corporal</p>
+          <p class="role">3rd Area ROK Support Group, 8th U.S. Army ROKA Support Group, Republic of Korea Army</p>
+          <p class="desc">Promoted early from Private First Class after ranking in the top 10% of performance evaluations across the battalion.</p>
+        </article>
+
+        <article class="card award">
+          <span class="year">Nov 2023</span>
+          <p class="org">Norwegian Foot March — Bronze Award</p>
+          <p class="role">Norwegian Armed Forces</p>
+          <p class="desc">Completed a 30 km march carrying an 11 kg rucksack in 4.5 hours.</p>
+          <a class="doc-link" href="../public/docs/norwegian-foot-march-certificate.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+
+        <article class="card award">
+          <span class="year">Oct 2023</span>
+          <p class="org">Commandant's List</p>
+          <p class="role">KATUSA Training Center, Republic of Korea Army</p>
+          <p class="desc">Named to the Commandant's List for outstanding performance during KATUSA training.</p>
+          <a class="doc-link" href="../public/docs/katusa-training-academy-diploma.pdf" target="_blank" rel="noopener">Diploma</a>
+        </article>
+
+        <article class="card award">
+          <span class="year">Sep 2023</span>
+          <p class="org">Company Distinguished Honor Graduate</p>
+          <p class="role">Korea Army Training Center, Republic of Korea Army</p>
+          <p class="desc">Graduated at the top of my company in basic training.</p>
+          <a class="doc-link" href="../public/docs/company-honor-graduate-certificate.pdf" target="_blank" rel="noopener">Certificate (Korean)</a>
+        </article>
+
+        <article class="card award">
+          <span class="year">2022 – 2023</span>
+          <p class="org">Rising Leader Among Men</p>
+          <p class="role">Lambda Phi Epsilon</p>
+          <p class="desc">Recognized by the national fraternity as a rising leader in the 2022–2023 academic year.</p>
+          <a class="doc-link" href="https://lambdaphiepsilon.org/resources/#academicachievement" target="_blank" rel="noopener">Listed on Lambda Phi Epsilon's website</a>
+        </article>
+
+        <article class="card award">
+          <span class="year">2022</span>
+          <p class="org">TOEFL iBT — 117 / 120</p>
+          <p class="role">ETS</p>
+          <p class="desc">Scored 30 in Listening, 30 in Writing, 29 in Speaking, and 28 in Reading.</p>
+        </article>
+
+        <article class="card award">
+          <span class="year">2020</span>
+          <p class="org">Strategic Thinking in Business</p>
+          <p class="role">Wakatobi Minds</p>
+          <a class="doc-link" href="../public/docs/strategic-thinking-in-business-certificate.pdf" target="_blank" rel="noopener">Certificate of Completion</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ MEDIA ============ -->
+    <section id="contributions" class="panel">
+      <h2>Publications &amp; Media</h2>
+
+      <h3>Video</h3>
+      <div class="media-grid">
+        <a class="card media" href="https://lnkd.in/p/gTrmdbuq" target="_blank" rel="noopener">
+          <span class="thumb-wrap">
+            <img src="../public/images/contributions/quotain-30-languages.jpg" alt="Quotain running inside Slack, with a prompt asking it to create a Korean buyer for sales practice" loading="lazy" width="1280" height="720">
+          </span>
+          <span class="media-body">
+            <span class="media-src">LinkedIn · Jul 2026</span>
+            <span class="media-title">Quotain now supports 30 languages</span>
+            <span class="media-desc">Demonstrated Quotain's multilingual support through a Korean run-through of the service.</span>
+          </span>
+        </a>
+
+        <a class="card media" href="https://www.youtube.com/watch?v=EFrGCzQEm_w" target="_blank" rel="noopener">
+          <span class="thumb-wrap">
+            <img src="../public/images/contributions/talks-on-wednesdays.jpg" alt="Title card reading Building Decision Science Capabilities, House of Analytics" loading="lazy" width="480" height="270">
+            <span class="play" aria-hidden="true"></span>
+          </span>
+          <span class="media-body">
+            <span class="media-src">YouTube · Aug 2020</span>
+            <span class="media-title">Talks on Wednesdays: Building Decision Science Capabilities</span>
+            <span class="media-desc">Answered questions about decision science and interning at House of Analytics.</span>
+          </span>
+        </a>
+      </div>
+
+      <h3>Publications</h3>
+      <div class="shelf">
+        <a class="cover" href="https://kdva.vet/2026/06/23/kdva-rok-u-s-alliance-journal-2026-2nd-quarter/" target="_blank" rel="noopener">
+          <img src="../public/images/contributions/kdva-journal-2026-q2.jpg" alt="Cover of the KDVA ROK-U.S. Alliance Journal, issue 2026-2, dedicated to Korean War veterans" loading="lazy" width="595" height="841">
+          <span class="cover-issue">Issue 2026 – 2 · Jun 2026</span>
+          <span class="cover-title">ROK–U.S. Alliance Journal</span>
+          <span class="cover-desc">Wrote an article on a former U.S. soldier's time in Korea.</span>
+        </a>
+
+        <a class="cover" href="https://kdva.vet/2026/04/06/kdva-rok-u-s-alliance-journal-2026-1st-edition/" target="_blank" rel="noopener">
+          <img src="../public/images/contributions/kdva-journal-2026-q1.jpg" alt="Cover of the KDVA ROK-U.S. Alliance Journal, issue 2026-1" loading="lazy" width="600" height="847">
+          <span class="cover-issue">Issue 2026 – 1 · Apr 2026</span>
+          <span class="cover-title">ROK–U.S. Alliance Journal</span>
+          <span class="cover-desc">Wrote an article on my experiences as a KATUSA.</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact" class="panel">
+      <div class="card contact-card">
+        <h2>Say hello</h2>
+        <p>The fastest way to reach me is email. I'm happy to talk about job opportunities, data analytics, running, or pool.</p>
+        <a class="big-link" href="mailto:junseo0225@gmail.com">junseo0225@gmail.com</a>
+        <ul class="plain contact-list">
+          <li><span class="label">linkedin</span><a href="https://www.linkedin.com/in/lee-jun-seo/" target="_blank" rel="noopener">linkedin.com/in/lee-jun-seo</a></li>
+          <li><span class="label">github</span><a href="https://github.com/junseo25" target="_blank" rel="noopener">github.com/junseo25</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <footer class="foot">© <span id="year"></span> Jun Seo Lee <span class="foot-sep">·</span> wip design</footer>
+  </main>
+
+  <!-- Same script as the live site: tabs, sticky bar, theme toggle, pool shot -->
+  <script src="../script.js"></script>
+</body>
+</html>
