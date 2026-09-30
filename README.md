@@ -1,27 +1,72 @@
-# Personal Website — Jun Seo Lee
+# Jun Seo Lee - Personal Website
 
-Plain HTML/CSS/JS. No build step. Open `index.html` in a browser to preview.
+The source code for my personal website, featuring my professional experience, education, extracurricular involvement, awards, publications, and contact information.
 
-## Files
-- `index.html` — all content (about, work, involvement, awards, contact)
-- `style.css` — colors, fonts, layout (colors are variables at the top)
-- `script.js` — tab switching + dark mode toggle
+[View the live website](https://junseo-lee.com)
 
-## To do before publishing
-1. Review the wording in each section.
-2. (Optional) Add a `resume.pdf` to `public/` and link it in the header socials.
+## Features
 
-## Adding things
-Copy any `<div class="entry">…</div>` block and edit it. Awards are `<li>` items in the awards list.
+- Responsive, single-page layout for desktop and mobile devices
+- Section-based navigation with shareable URL hashes
+- Light and dark themes with saved visitor preferences
+- Downloadable resume and supporting professional documents
+- Dedicated sections for experience, involvement, awards, and media contributions
+- Reduced-motion support for visitors who prefer limited animation
 
-## Hosting (GitHub Pages + custom domain)
-Repo: `junseo25/junseo25.github.io`. Pages serves the `main` branch root, so every push updates the site.
+## Built With
 
-To connect your own domain:
-1. Add a file named `CNAME` to this folder containing just the domain (e.g. `junseolee.com`), commit, and push.
-2. At your domain registrar, add DNS records:
-   - Apex domain (`junseolee.com`): four `A` records → `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
-   - `www` subdomain: a `CNAME` record → `junseo25.github.io`
-3. Repo → Settings → Pages: confirm the custom domain, wait for the DNS check, then tick **Enforce HTTPS**.
+- Semantic HTML5
+- CSS3 with custom properties and responsive layouts
+- Vanilla JavaScript
+- GitHub Pages
 
-DNS changes can take up to a few hours to propagate.
+The site has no framework, package dependencies, or build step.
+
+## Project Structure
+
+```text
+.
+|-- public/
+|   |-- docs/                  # Certificates and recommendation letters
+|   |-- images/
+|   |   `-- contributions/     # Publication and media images
+|   |-- favicon.svg
+|   |-- headshot.jpg
+|   `-- resume.pdf
+|-- CNAME                      # Custom domain configuration
+|-- index.html                 # Site content and page structure
+|-- script.js                  # Navigation, theme, and animation behavior
+|-- style.css                  # Typography, colors, and responsive styling
+`-- README.md
+```
+
+## Local Development
+
+Clone the repository and open `index.html` in a browser:
+
+```bash
+git clone https://github.com/junseo25/personal-website.git
+cd personal-website
+```
+
+Because the site is built with plain HTML, CSS, and JavaScript, no installation or compilation is required. A local static server or editor extension with live reload can also be used during development.
+
+## Updating the Site
+
+- Edit page content and links in `index.html`.
+- Adjust the design tokens and responsive styles in `style.css`.
+- Update interactive behavior in `script.js`.
+- Store resumes, documents, icons, and images in `public/`, then reference them with paths beginning with `public/`.
+
+## Deployment
+
+The site is hosted with GitHub Pages and served from the custom domain [junseo-lee.com](https://junseo-lee.com). Updates are published when changes are pushed to the repository's configured Pages branch.
+
+The `CNAME` file must remain in the repository root so GitHub Pages can retain the custom domain configuration.
+
+## Author
+
+Jun Seo Lee
+
+- [GitHub](https://github.com/junseo25)
+- [LinkedIn](https://www.linkedin.com/in/lee-jun-seo/)
