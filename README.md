@@ -9,7 +9,7 @@ Plain HTML/CSS/JS. No build step. Open `index.html` in a browser to preview.
 
 ## To do before publishing
 1. Review the wording in each section.
-2. (Optional) Add a `resume.pdf` to this folder and link it in the header socials.
+2. (Optional) Add a `resume.pdf` to `public/` and link it in the header socials.
 
 ## Adding things
 Copy any `<div class="entry">…</div>` block and edit it. Awards are `<li>` items in the awards list.
