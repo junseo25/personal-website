@@ -488,6 +488,14 @@ ul.plain li { margin-bottom: 8px; }
 }
 .src-badge.li { background: #0a66c2; }
 .src-badge.yt { background: #e62117; border-radius: 4px; }
+.src-badge.gh { background: var(--text); border-radius: 50%; }
+.src-badge.gh::after {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border: 1.5px solid var(--bg);
+  border-radius: 50%;
+}
 .src-badge.yt::after {
   content: "";
   border-style: solid;
@@ -508,6 +516,51 @@ ul.plain li { margin-bottom: 8px; }
   color: var(--muted);
   font-size: 0.88rem;
   line-height: 1.5;
+}
+
+/* project covers: drawn in CSS so they match both themes */
+.proj-cover {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background:
+    linear-gradient(var(--accent-soft), var(--accent-soft)),
+    radial-gradient(circle, var(--rule) 1px, transparent 1.5px) 0 0 / 14px 14px,
+    var(--bg);
+}
+.media:hover .proj-cover { background-position: 0 0, 7px 7px, 0 0; }
+.proj-code {
+  font-family: var(--serif);
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--accent);
+  letter-spacing: 0.01em;
+  transition: transform 0.4s ease;
+}
+.proj-ball {
+  width: 56px;
+  height: 56px;
+  transition: transform 0.4s ease;
+}
+.proj-ball circle { fill: #1c1c1a; stroke: var(--muted); stroke-width: 0.6; }
+.proj-ball .spot { stroke: none; }
+.proj-ball .spot { fill: #ffffff; }
+.proj-ball text { font: 500 11px var(--sans); fill: #1c1c1a; }
+.media:hover .proj-code { transform: scale(1.04); }
+.media:hover .proj-ball { transform: rotate(25deg) scale(1.04); }
+.proj-label {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  color: var(--muted);
+  text-transform: lowercase;
+}
+.media-tags {
+  margin-top: 4px;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--accent);
 }
 
 /* journal covers standing on a shelf */
@@ -546,5 +599,5 @@ ul.plain li { margin-bottom: 8px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .media, .thumb-wrap img, .play, .cover img { transition: none; }
+  .media, .thumb-wrap img, .play, .cover img, .proj-code, .proj-ball { transition: none; }
 }
