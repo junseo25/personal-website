@@ -556,8 +556,11 @@ ul.plain li { margin-bottom: 8px; }
   color: var(--muted);
   text-transform: lowercase;
 }
+/* body fills the card so the tags sit on the bottom edge, level across a row */
+.media-body:has(.media-tags) { flex: 1; }
 .media-tags {
-  margin-top: 4px;
+  margin-top: auto;
+  padding-top: 4px;
   font-family: var(--mono);
   font-size: 0.72rem;
   color: var(--accent);
